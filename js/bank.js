@@ -11,6 +11,7 @@ document.getElementById('deposit').addEventListener("click", function () {
 
     deposiTotal.innerText = parseFloat(depositInput) + parseFloat(depositFinal);
     totalAmount.innerText = parseFloat(depositInput) + parseFloat(totalAmmountFinal);
+    userDepositInput.value = '';
 
 });
 

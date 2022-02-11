@@ -13,14 +13,29 @@ document.getElementById('deposit').addEventListener("click", function () {
     totalAmount.innerText = parseFloat(depositInput) + parseFloat(totalAmmountFinal);
     userDepositInput.value = '';
 
+
 });
 
 
-document.getElementById('withdrow').addEventListener("click", function () {
+document.getElementById('Withdrow').addEventListener("click", function () {
     const userWithderowInput = document.getElementById('withdrow-input');
     const withdrowInput = userWithderowInput.value;
 
     const withdrowTotal = document.getElementById('withdrow-total');
     const withdrowAmount = withdrowTotal.innerText;
-    withdrowTotal.innerText = parseFloat(withdrowInput) + parseFloat(withdrowAmount);
+
+    const totalAmmount = document.getElementById('total');
+    const totalAmmountFinal = totalAmmount.innerText;
+
+
+
+    userWithderowInput.value = '';
+    if (parseFloat(totalAmmountFinal) > parseFloat(withdrowInput)) {
+        withdrowTotal.innerText = parseFloat(withdrowInput) + parseFloat(withdrowAmount);
+        totalAmmount.innerText = parseFloat(totalAmmountFinal) - parseFloat(withdrowInput);
+        alert("Congratulation! You can withdrow ", withdrowTotal.innerText = parseFloat(withdrowInput) + parseFloat(withdrowAmount), " Doller from Your Account")
+    }
+    else {
+        alert("you have not Money! Please Deposite first")
+    }
 });
